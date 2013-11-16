@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
   s.name        = "artoo-force"
   s.version     = Artoo::Force::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Your name here"]
-  s.email       = ["your email here"]
-  s.homepage    = "Your homepage here"
+  s.authors     = ["Adrian Zankich", "Edgar Silva"]
+  s.email       = ["artoo@hybridgroup.com"]
+  s.homepage    = "http://artoo.io"
   s.summary     = %q{Artoo adaptor and driver for Force}
   s.description = %q{Artoo adaptor and driver for Force}
 
@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency 'artoo', '>= 1.4.1'
+  s.add_runtime_dependency 'restforce', '>= 1.4.2'
+
   # TODO: add your development dependencies here
   # EXAMPLE:
   # s.add_development_dependency 'minitest', '>= 5.0'

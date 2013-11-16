@@ -5,11 +5,13 @@ module Artoo
     # The force driver behaviors
     class Force < Driver
 
+      attr_reader :query_results, :query
+
       # Start driver and any required connections
       def start_driver
         begin
           every(interval) do
-            handle_message_events
+            query_force
           end
 
           super
@@ -20,9 +22,14 @@ module Artoo
         end
       end
 
-      def handle_message_events         
+      def query= query
+        @query = query
       end
 
+      def query_force
+        @query_results = connection.client.query(query)
+        publish(event_topic_name("query_results"), @query_results)
+      end
     end
   end
 end
