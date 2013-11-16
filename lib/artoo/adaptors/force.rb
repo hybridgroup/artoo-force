@@ -21,7 +21,7 @@ module Artoo
         @client = Restforce.new(
           username: username,
           password: password,
-          security_token: security_token, 
+          security_token: security_token,
           client_id: client_id,
           client_secret: client_secret,
           instance_url: instance_url
@@ -52,7 +52,7 @@ module Artoo
       # Uses method missing to call device actions
       # @see device documentation
       def method_missing(method_name, *arguments, &block)
-        device.send(method_name, *arguments, &block)
+        client.send(method_name, *arguments, &block)
       end
     end
   end
