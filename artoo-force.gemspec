@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'artoo', '>= 1.4.1'
   s.add_runtime_dependency 'restforce', '>= 1.4.2'
+  s.add_runtime_dependency 'faye', '>= 1.0.0'
 
   # TODO: add your development dependencies here
   # EXAMPLE:

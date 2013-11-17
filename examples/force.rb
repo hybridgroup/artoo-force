@@ -3,9 +3,9 @@ require 'artoo'
 connection :force, :adaptor => :force, 
   :username => ENV["SF_USERNAME"],
   :password => ENV["SF_PASSWORD"],
-  :security_token => ENV["SF_SECURITY_TOKEN"]
-  :client_id => ENV["SF_CLIENT_ID"]
-  :client_secret => ENV["SF_CLIENT_SECRET"]
+  :security_token => ENV["SF_SECURITY_TOKEN"],
+  :client_id => ENV["SF_CLIENT_ID"],
+  :client_secret => ENV["SF_CLIENT_SECRET"],
   :instance_url => ENV["SF_INSTANCE_URL"]
 device :force, :driver => :force, :connection => :capture
 

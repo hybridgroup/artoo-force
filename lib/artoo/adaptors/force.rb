@@ -48,7 +48,7 @@ module Artoo
       def version
         Artoo::Force::VERSION
       end
-
+      
       # Uses method missing to call device actions
       # @see device documentation
       def method_missing(method_name, *arguments, &block)

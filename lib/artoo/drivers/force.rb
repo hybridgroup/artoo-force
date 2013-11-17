@@ -27,12 +27,18 @@ module Artoo
       end
 
       def query_force
-        @query_results = connection.query(query)
-        publish(event_topic_name("query_results"), @query_results)
+        if query != nil
+          @query_results = connection.query(query)
+          publish(event_topic_name("query_results"), @query_results)
+        end
       end
 
       def push(apexPath, method, data)
-        connection.send(method.downcase, apexPath, data)
+        begin
+          connection.client.post(apexPath, data)
+        rescue Exception => e
+          Logger.error e.message
+        end
       end
 
       def method_missing(method_name, *arguments, &block)
